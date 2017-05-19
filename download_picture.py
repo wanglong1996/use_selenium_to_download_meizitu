@@ -13,9 +13,11 @@ from multiprocessing import Pool
 
 page_urls =[]
 img_urls = []
+#链接到mongdb
 client = pymongo.MongoClient(MONGODB_URL)
 db = client[MONGODB]
 
+#打开chrome并登入指定网站
 browser = webdriver.Chrome()
 browser.get('http://www.meizitu.com/a/list_1_1.html')
 wait = WebDriverWait(browser,10)
